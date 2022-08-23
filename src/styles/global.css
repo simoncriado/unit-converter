@@ -1,0 +1,10 @@
+body {
+  font-family: "Poppins";
+}
+
+.title {
+  text-align: center;
+  font-weight: bold;
+  color: #2e0039;
+  border-bottom: 2px solid lightgrey;
+}

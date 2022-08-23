@@ -1,0 +1,12 @@
+.favorites {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.favorite {
+  background-color: lightgrey;
+  height: 35px;
+  width: 49%;
+  font-size: 16px;
+  border-radius: 5px;
+}
