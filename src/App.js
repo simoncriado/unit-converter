@@ -1,4 +1,8 @@
 import Converter from "./components/Converter";
+import Footer from "./components/Footer";
+
+// Styles
+import "./styles/global.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -12,6 +16,7 @@ function App() {
         Unit Converter
       </h2>
       <Converter />
+      <Footer />
     </div>
   );
 }

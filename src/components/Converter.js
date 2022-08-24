@@ -15,7 +15,6 @@ export default function Converter() {
   const [amount, setAmount] = useState(0);
   const [convertedUnit, setConvertedUnit] = useState(0);
   const [favorites, setFavorites] = useState([]);
-  console.log(favorites);
 
   const handleDropdownChange = (event) => {
     // Here I set the right unit as the selected one
@@ -73,8 +72,8 @@ export default function Converter() {
 
   const switchUnits = () => {
     // Reseting results
-    setAmount(0);
-    setConvertedUnit(0);
+    setAmount(convertedUnit);
+    setConvertedUnit(amount);
     // After clicking the switch button changing the current unit to the opposite one: for example if km is selected after clicking Switch it will
     // be changed to miles. Also setting the convertedTo to the right unit
     if (value === "Km") {
@@ -107,21 +106,21 @@ export default function Converter() {
     setFavorites((prevState) => [
       ...prevState,
       {
+        id: Math.floor(Math.random() * 1001),
         amount: amount,
         value: value,
         result: convertedUnit,
         convertedTo: convertedTo,
       },
     ]);
+    setAmount(0);
+    setConvertedUnit(0.0);
   };
 
   // Everytime the amount is changed the function to convertUnits is fired again
   useEffect(() => {
     convertUnits();
   }, [amount]);
-  // useEffect(() => {
-  //   localStorage.setItem("favorites", JSON.stringify(favorites));
-  // }, [favorites]);
 
   return (
     <div>
@@ -141,7 +140,7 @@ export default function Converter() {
             </select>
           </div>
           <div>
-            <button onClick={switchUnits}>
+            <button className="switch" onClick={switchUnits}>
               <FontAwesomeIcon icon={faArrowRightArrowLeft} />
             </button>
           </div>
@@ -153,7 +152,9 @@ export default function Converter() {
         <div className="favAndResult">
           <div>
             <span>
-              <FontAwesomeIcon icon={faHeart} onClick={saveFavorite} />
+              {amount > 0 && (
+                <FontAwesomeIcon icon={faHeart} onClick={saveFavorite} />
+              )}
             </span>
           </div>
           <div>

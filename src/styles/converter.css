@@ -25,14 +25,21 @@
   display: flex;
   justify-content: space-between;
   padding-left: 5%;
-  padding-right: 20%;
+  padding-right: 10%;
 }
 .dropdown select {
   border: none;
   border-bottom: 1px solid white;
   color: white;
   background-color: #2e0039;
-  width: 180px;
+  max-width: 200%;
+  cursor: pointer;
+}
+.switch {
+  border: none;
+  background-color: #2e0039;
+  color: white;
+  cursor: pointer;
 }
 input {
   border: none;
@@ -41,6 +48,7 @@ input {
   background-color: #2e0039;
   text-align: right;
   margin-right: 5px;
+  max-width: 100%;
 }
 
 .favAndResult {
@@ -48,8 +56,59 @@ input {
   justify-content: space-between;
   margin-top: 30px;
   padding-left: 5%;
-  padding-right: 20%;
+  padding-right: 10%;
 }
 .result {
   margin-right: 5px;
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+/* Media query for small screen devices */
+@media (max-width: 800px) {
+  .container {
+    width: 90%;
+    height: 200px;
+    margin: auto;
+    color: white;
+    background-color: #2e0039;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  .container2 {
+    width: 90%;
+    margin: auto;
+    color: grey;
+  }
+  .units {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .dropdown select {
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+    background-color: #2e0039;
+    width: 200px;
+  }
+  input {
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+    background-color: #2e0039;
+    text-align: right;
+    margin-right: 5px;
+    width: 200px;
+  }
+  .favAndResult {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }
